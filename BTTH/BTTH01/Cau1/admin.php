@@ -33,7 +33,7 @@
                     <th>STT</th>
                     <th>Tên hoa</th>
                     <th>Mô tả</th>
-                    <th>Ảnh</th>
+                    <th>Ảnh </th>
                     <th>Hành động</th>
                 </tr>
             </thead>
