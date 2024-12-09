@@ -15,7 +15,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // Post->factory(10)->create();
-        $this->call(PostSeeder::class);
+        $this->call([
+            LibrariesTableSeeder::class,
+        BooksTableSeeder::class,
+        ]);
 
         // Post::factory()->create([
         //     'name' => 'Test User',
