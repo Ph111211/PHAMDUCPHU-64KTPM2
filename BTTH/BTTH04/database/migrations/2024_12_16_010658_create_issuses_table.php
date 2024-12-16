@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('computer_id');
             $table->foreign('computer_id')->references('id')->on('computers');
             $table->string('reported_by',50);
-            $table->datetime('reported_date');
+            $table->date('reported_date');
             $table->text('description');
             $table->enum('urgency',['Low','Medium','High']);
             $table->enum('status',['Open','In Progress','Resolved']);

@@ -10,9 +10,7 @@ use Illuminate\Support\Str;
 
 class issuseSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+
     public function run(): void
     {
         $faker = Faker::create();
@@ -23,7 +21,7 @@ class issuseSeeder extends Seeder
            'computer_id'=>$faker->randomElement($Computer_id),
 
                'reported_by'=>Str::random(50),
-               'reported_date'=>$faker->dateTime(),
+               'reported_date'=>$faker->dateTime("mm:dd:yyyy"),
                'description'=>$faker->paragraph(),
                'urgency'=>$faker->randomElement(['Low','Medium','High']),
                'status'=>$faker->randomElement(['Open','In Progress','Resolved']),

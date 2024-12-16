@@ -248,31 +248,6 @@ table.table .avatar {
 	font-weight: normal;
 }	
 </style>
-<script>
-$(document).ready(function(){
-	// Activate tooltip
-	$('[data-toggle="tooltip"]').tooltip();
-	
-	// Select/Deselect checkboxes
-	var checkbox = $('table tbody input[type="checkbox"]');
-	$("#selectAll").click(function(){
-		if(this.checked){
-			checkbox.each(function(){
-				this.checked = true;                        
-			});
-		} else{
-			checkbox.each(function(){
-				this.checked = false;                        
-			});
-		} 
-	});
-	checkbox.click(function(){
-		if(!this.checked){
-			$("#selectAll").prop("checked", false);
-		}
-	});
-});
-</script>
 </head>
 <body>
 <div class="container-xl">
@@ -281,11 +256,11 @@ $(document).ready(function(){
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Manage <b>Employees</b></h2>
+						<h2>Manage <b>Issues Computer</b></h2>
 					</div>
 					
 					<div class="col-sm-6">
-						<a href="{{ route('create') }}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Thêm đồ án mới</span></a>
+						<a href="{{ route('create') }}" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Them loi</span></a>
 												
 					</div>
 				</div>
@@ -312,7 +287,7 @@ $(document).ready(function(){
                     @foreach ($issues as $issue)
                         <tr>
                             <td>{{ $issue->id }}</td>
-                            <td>{{ $issue->computer_id }}</td>
+                            <td>{{ $issue->computer->computer_name }}</td>
                             <td>{{ $issue->computer->model }}</td>
                             <td>{{ $issue->reported_by }}</td>
                             <td>{{ $issue->reported_date }}</td>

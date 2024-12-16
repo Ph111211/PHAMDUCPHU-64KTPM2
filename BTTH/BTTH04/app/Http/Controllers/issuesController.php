@@ -31,6 +31,15 @@ class issuesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'reported_by' => 'required|max:50',
+            'reported_by' => 'required|date',
+            'description' => 'required|max:500',
+            'urgency' => 'required',
+            'status' => 'required',
+            
+        ]);
+
         issues::create($request->all());
         return redirect()->route('index');
     }
@@ -59,6 +68,14 @@ class issuesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'reported_by' => 'required|max:50',
+            'reported_by' => 'required|date',
+            'description' => 'required|max:500',
+            'urgency' => 'required',
+            'status' => 'required',
+            
+        ]);
         $issue = issues::findOrFail($id);
         $issue->update($request->all());
         return redirect()->route('index');
